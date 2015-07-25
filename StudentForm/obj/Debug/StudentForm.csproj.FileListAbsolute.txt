@@ -1,0 +1,16 @@
+c:\users\yura\documents\visual studio 2013\Projects\StudentForm\StudentForm\bin\Debug\StudentForm.exe.config
+c:\users\yura\documents\visual studio 2013\Projects\StudentForm\StudentForm\obj\Debug\StudentForm.csproj.App.config
+c:\users\yura\documents\visual studio 2013\Projects\StudentForm\StudentForm\obj\Debug\StudentForm.csprojResolveAssemblyReference.cache
+c:\users\yura\documents\visual studio 2013\Projects\StudentForm\StudentForm\obj\Debug\StudentForm.Form1.resources
+c:\users\yura\documents\visual studio 2013\Projects\StudentForm\StudentForm\obj\Debug\StudentForm.Properties.Resources.resources
+c:\users\yura\documents\visual studio 2013\Projects\StudentForm\StudentForm\obj\Debug\StudentForm.csproj.GenerateResource.Cache
+c:\users\yura\documents\visual studio 2013\Projects\StudentForm\StudentForm\bin\Debug\StudentForm.exe
+c:\users\yura\documents\visual studio 2013\Projects\StudentForm\StudentForm\bin\Debug\StudentForm.pdb
+c:\users\yura\documents\visual studio 2013\Projects\StudentForm\StudentForm\bin\Debug\System.Net.Http.Extensions.dll
+c:\users\yura\documents\visual studio 2013\Projects\StudentForm\StudentForm\bin\Debug\System.Net.Http.Primitives.dll
+c:\users\yura\documents\visual studio 2013\Projects\StudentForm\StudentForm\bin\Debug\System.Net.Http.Extensions.xml
+c:\users\yura\documents\visual studio 2013\Projects\StudentForm\StudentForm\bin\Debug\System.Net.Http.Primitives.xml
+c:\users\yura\documents\visual studio 2013\Projects\StudentForm\StudentForm\obj\Debug\StudentForm.exe
+c:\users\yura\documents\visual studio 2013\Projects\StudentForm\StudentForm\obj\Debug\StudentForm.pdb
+c:\users\yura\documents\visual studio 2013\Projects\StudentForm\StudentForm\bin\Debug\Newtonsoft.Json.dll
+c:\users\yura\documents\visual studio 2013\Projects\StudentForm\StudentForm\bin\Debug\Newtonsoft.Json.xml
