@@ -18,7 +18,7 @@ namespace StudentForm
 {
     public partial class Form1 : Form
     {
-        private Uri baseUri = new Uri("http://localhost:19121/");  //change to localhost 
+        private Uri baseUri = new Uri("http://masteryura.in.ua/");  //change to localhost 
 
         public Form1()
         {
