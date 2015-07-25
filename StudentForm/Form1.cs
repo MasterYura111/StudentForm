@@ -44,8 +44,9 @@ namespace StudentForm
                     dataGridView1.DataSource = students;
                 }
             }
-        }
 
+            ShowTable();
+        }
 
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -55,19 +56,34 @@ namespace StudentForm
             student.Surname = textBoxSurname.Text;
             student.Age = (int)numericUpDownAge.Value;
 
-            using (var client = new HttpClient())
+            string AddOrEdit = labelAddOrEdit.Text;
+
+            if (AddOrEdit == "add")
             {
-                client.BaseAddress = baseUri;
-                var response = client.PostAsync("api/values",
-
-                    new StringContent(JsonConvert.SerializeObject(student).ToString(),
-                        Encoding.UTF8, "application/json"))
-                        .Result;
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = baseUri;
+                    var response = client.PostAsync("api/values",
+                        new StringContent(JsonConvert.SerializeObject(student).ToString(),
+                            Encoding.UTF8, "application/json"))
+                            .Result;
+                }
             }
-            LoadStudents();
-            ClearGroupAdd();
-            ShowTable();
+            else if (AddOrEdit == "edit")
+            {
+                student.Id = Int32.Parse(labelEditId.Text);
 
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = baseUri;
+                    var response = client.PutAsync("api/values/" + student.Id,
+                        new StringContent(JsonConvert.SerializeObject(student).ToString(),
+                            Encoding.UTF8, "application/json"))
+                            .Result;
+                }
+            }
+
+            LoadStudents();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -79,24 +95,24 @@ namespace StudentForm
 
             if (e.ColumnIndex == 4) //edit
             {
-
-                groupBoxAdd.Visible = false;
-                groupBoxEdit.Visible = true;
+                groupBoxAdd.Visible = true;
                 dataGridView1.Visible = false;
                 buttonShowAddGroup.Visible = false;
-
-                var client = new HttpClient();
-
-                var response = client.GetAsync(baseUri + "/api/values/" + id).Result;
+                labelAddOrEdit.Text = "edit";
+                buttonAdd.Text = "Save";
+                groupBoxAdd.Text = "Edit student";
 
                 Student student = null;
+
+                var client = new HttpClient();
+                var response = client.GetAsync(baseUri + "/api/values/" + id).Result;
                 var jsonString = response.Content.ReadAsStringAsync();
                 student = JsonConvert.DeserializeObject<Student>(jsonString.Result);
 
                 labelEditId.Text = student.Id.ToString();
-                textBoxEditName.Text = student.Name;
-                textBoxEditSurname.Text = student.Surname;
-                numericUpDownEditAge.Value = student.Age;
+                textBoxName.Text = student.Name;
+                textBoxSurname.Text = student.Surname;
+                numericUpDownAge.Value = student.Age;
 
             }
             else if (e.ColumnIndex == 5) //delete
@@ -116,50 +132,30 @@ namespace StudentForm
                     var response = client.DeleteAsync("api/values/" + id)
                             .Result;
                 }
+
                 LoadStudents();
-
             }
-
-            return;
-        }
-
-        private void buttonEditSave_Click(object sender, EventArgs e)
-        {
-            Student student = new Student();
-            student.Id = Int32.Parse(labelEditId.Text);
-            student.Name = textBoxEditName.Text;
-            student.Age = (int)numericUpDownEditAge.Value;
-            student.Surname = textBoxEditSurname.Text;
-
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = baseUri;
-                var response = client.PutAsync("api/values/" + student.Id,
-
-                    new StringContent(JsonConvert.SerializeObject(student).ToString(),
-                        Encoding.UTF8, "application/json"))
-                        .Result;
-            }
-            LoadStudents();
-
         }
 
         private void buttonShowAddGroup_Click(object sender, EventArgs e)
         {
             buttonShowAddGroup.Visible = false;
             groupBoxAdd.Visible = true;
-            groupBoxEdit.Visible = false;
             dataGridView1.Visible = false;
 
-        }
+            labelAddOrEdit.Text = "add";
+            buttonAdd.Text = "Add";
+            groupBoxAdd.Text = "Add new Student";
 
+        }
 
         private void ShowTable()
         {
             buttonShowAddGroup.Visible = true;
             groupBoxAdd.Visible = false;
-            groupBoxEdit.Visible = false;
             dataGridView1.Visible = true;
+
+            ClearGroupAdd();
         }
 
         private void ClearGroupAdd()
@@ -167,19 +163,15 @@ namespace StudentForm
             textBoxName.Clear();
             textBoxSurname.Clear();
             numericUpDownAge.Value = 0;
+            labelEditId.Text = null;
+            labelAddOrEdit.Text = null;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             ShowTable();
+            ClearGroupAdd();
         }
-
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            ShowTable();
-        }
-
-
     }
 
 }

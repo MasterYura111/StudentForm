@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.EditStudent = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.DeleteStudent = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBoxAdd = new System.Windows.Forms.GroupBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.buttonAdd = new System.Windows.Forms.Button();
@@ -41,18 +39,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBoxEdit = new System.Windows.Forms.GroupBox();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.labelEditId = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.buttonEditSave = new System.Windows.Forms.Button();
-            this.numericUpDownEditAge = new System.Windows.Forms.NumericUpDown();
-            this.textBoxEditSurname = new System.Windows.Forms.TextBox();
-            this.textBoxEditName = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.buttonShowAddGroup = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelAddOrEdit = new System.Windows.Forms.Label();
+            this.EditStudent = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.DeleteStudent = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,8 +54,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBoxAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
-            this.groupBoxEdit.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEditAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,59 +74,43 @@
             this.EditStudent,
             this.DeleteStudent});
             this.dataGridView1.DataSource = this.studentBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 77);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 56);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(652, 291);
+            this.dataGridView1.Size = new System.Drawing.Size(537, 372);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // EditStudent
-            // 
-            this.EditStudent.HeaderText = "Edit";
-            this.EditStudent.Name = "EditStudent";
-            this.EditStudent.ReadOnly = true;
-            this.EditStudent.Text = "Edit";
-            this.EditStudent.ToolTipText = "Edit";
-            this.EditStudent.UseColumnTextForButtonValue = true;
-            // 
-            // DeleteStudent
-            // 
-            this.DeleteStudent.DataPropertyName = "Id";
-            this.DeleteStudent.HeaderText = "Dell";
-            this.DeleteStudent.Name = "DeleteStudent";
-            this.DeleteStudent.ReadOnly = true;
-            this.DeleteStudent.Text = "Delete";
-            this.DeleteStudent.ToolTipText = "jj";
-            this.DeleteStudent.UseColumnTextForButtonValue = true;
-            // 
             // groupBoxAdd
             // 
+            this.groupBoxAdd.Controls.Add(this.labelAddOrEdit);
+            this.groupBoxAdd.Controls.Add(this.label4);
             this.groupBoxAdd.Controls.Add(this.linkLabel1);
+            this.groupBoxAdd.Controls.Add(this.labelEditId);
             this.groupBoxAdd.Controls.Add(this.buttonAdd);
+            this.groupBoxAdd.Controls.Add(this.label7);
             this.groupBoxAdd.Controls.Add(this.label3);
             this.groupBoxAdd.Controls.Add(this.numericUpDownAge);
             this.groupBoxAdd.Controls.Add(this.textBoxSurname);
             this.groupBoxAdd.Controls.Add(this.label2);
             this.groupBoxAdd.Controls.Add(this.textBoxName);
             this.groupBoxAdd.Controls.Add(this.label1);
-            this.groupBoxAdd.Location = new System.Drawing.Point(12, 77);
+            this.groupBoxAdd.Location = new System.Drawing.Point(12, 56);
             this.groupBoxAdd.Name = "groupBoxAdd";
-            this.groupBoxAdd.Size = new System.Drawing.Size(174, 332);
+            this.groupBoxAdd.Size = new System.Drawing.Size(188, 372);
             this.groupBoxAdd.TabIndex = 1;
             this.groupBoxAdd.TabStop = false;
             this.groupBoxAdd.Text = "Add new student";
             this.groupBoxAdd.Visible = false;
-            
             // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(85, 312);
+            this.linkLabel1.Location = new System.Drawing.Point(93, 273);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(89, 17);
             this.linkLabel1.TabIndex = 8;
@@ -145,7 +120,7 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(22, 247);
+            this.buttonAdd.Location = new System.Drawing.Point(22, 226);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(75, 23);
             this.buttonAdd.TabIndex = 6;
@@ -201,122 +176,76 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Name";
             // 
-            // groupBoxEdit
-            // 
-            this.groupBoxEdit.Controls.Add(this.linkLabel2);
-            this.groupBoxEdit.Controls.Add(this.labelEditId);
-            this.groupBoxEdit.Controls.Add(this.label7);
-            this.groupBoxEdit.Controls.Add(this.buttonEditSave);
-            this.groupBoxEdit.Controls.Add(this.numericUpDownEditAge);
-            this.groupBoxEdit.Controls.Add(this.textBoxEditSurname);
-            this.groupBoxEdit.Controls.Add(this.textBoxEditName);
-            this.groupBoxEdit.Controls.Add(this.label6);
-            this.groupBoxEdit.Controls.Add(this.label5);
-            this.groupBoxEdit.Controls.Add(this.label4);
-            this.groupBoxEdit.Location = new System.Drawing.Point(192, 77);
-            this.groupBoxEdit.Name = "groupBoxEdit";
-            this.groupBoxEdit.Size = new System.Drawing.Size(200, 332);
-            this.groupBoxEdit.TabIndex = 2;
-            this.groupBoxEdit.TabStop = false;
-            this.groupBoxEdit.Text = "Edit student";
-            this.groupBoxEdit.Visible = false;
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(105, 312);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(89, 17);
-            this.linkLabel2.TabIndex = 8;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "back to table";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
-            // 
             // labelEditId
             // 
             this.labelEditId.AutoSize = true;
-            this.labelEditId.Location = new System.Drawing.Point(148, 22);
+            this.labelEditId.Location = new System.Drawing.Point(48, 310);
             this.labelEditId.Name = "labelEditId";
             this.labelEditId.Size = new System.Drawing.Size(16, 17);
             this.labelEditId.TabIndex = 8;
             this.labelEditId.Text = "0";
+            this.labelEditId.Visible = false;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(119, 22);
+            this.label7.Location = new System.Drawing.Point(19, 310);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(23, 17);
             this.label7.TabIndex = 7;
             this.label7.Text = "id:";
-            // 
-            // buttonEditSave
-            // 
-            this.buttonEditSave.Location = new System.Drawing.Point(22, 247);
-            this.buttonEditSave.Name = "buttonEditSave";
-            this.buttonEditSave.Size = new System.Drawing.Size(75, 23);
-            this.buttonEditSave.TabIndex = 6;
-            this.buttonEditSave.Text = "Save edit";
-            this.buttonEditSave.UseVisualStyleBackColor = true;
-            this.buttonEditSave.Click += new System.EventHandler(this.buttonEditSave_Click);
-            // 
-            // numericUpDownEditAge
-            // 
-            this.numericUpDownEditAge.Location = new System.Drawing.Point(22, 183);
-            this.numericUpDownEditAge.Name = "numericUpDownEditAge";
-            this.numericUpDownEditAge.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDownEditAge.TabIndex = 5;
-            // 
-            // textBoxEditSurname
-            // 
-            this.textBoxEditSurname.Location = new System.Drawing.Point(22, 117);
-            this.textBoxEditSurname.Name = "textBoxEditSurname";
-            this.textBoxEditSurname.Size = new System.Drawing.Size(100, 22);
-            this.textBoxEditSurname.TabIndex = 4;
-            // 
-            // textBoxEditName
-            // 
-            this.textBoxEditName.Location = new System.Drawing.Point(22, 56);
-            this.textBoxEditName.Name = "textBoxEditName";
-            this.textBoxEditName.Size = new System.Drawing.Size(100, 22);
-            this.textBoxEditName.TabIndex = 3;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 163);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 17);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Edit Age";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 97);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 17);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Edit Surname";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 36);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 17);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Edit Name";
+            this.label7.Visible = false;
             // 
             // buttonShowAddGroup
             // 
-            this.buttonShowAddGroup.Location = new System.Drawing.Point(13, 41);
+            this.buttonShowAddGroup.Location = new System.Drawing.Point(12, 22);
             this.buttonShowAddGroup.Name = "buttonShowAddGroup";
             this.buttonShowAddGroup.Size = new System.Drawing.Size(75, 23);
             this.buttonShowAddGroup.TabIndex = 3;
             this.buttonShowAddGroup.Text = "Add";
             this.buttonShowAddGroup.UseVisualStyleBackColor = true;
             this.buttonShowAddGroup.Click += new System.EventHandler(this.buttonShowAddGroup_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(18, 339);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 17);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "AddOrEdit";
+            this.label4.Visible = false;
+            // 
+            // labelAddOrEdit
+            // 
+            this.labelAddOrEdit.AutoSize = true;
+            this.labelAddOrEdit.Location = new System.Drawing.Point(96, 339);
+            this.labelAddOrEdit.Name = "labelAddOrEdit";
+            this.labelAddOrEdit.Size = new System.Drawing.Size(30, 17);
+            this.labelAddOrEdit.TabIndex = 10;
+            this.labelAddOrEdit.Text = "null";
+            this.labelAddOrEdit.Visible = false;
+            // 
+            // EditStudent
+            // 
+            this.EditStudent.HeaderText = "Edit";
+            this.EditStudent.Name = "EditStudent";
+            this.EditStudent.ReadOnly = true;
+            this.EditStudent.Text = "Edit";
+            this.EditStudent.ToolTipText = "Edit";
+            this.EditStudent.UseColumnTextForButtonValue = true;
+            this.EditStudent.Width = 50;
+            // 
+            // DeleteStudent
+            // 
+            this.DeleteStudent.DataPropertyName = "Id";
+            this.DeleteStudent.HeaderText = "Dell";
+            this.DeleteStudent.Name = "DeleteStudent";
+            this.DeleteStudent.ReadOnly = true;
+            this.DeleteStudent.Text = "Del";
+            this.DeleteStudent.ToolTipText = "jj";
+            this.DeleteStudent.UseColumnTextForButtonValue = true;
+            this.DeleteStudent.Width = 40;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -354,21 +283,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1062, 653);
-            this.Controls.Add(this.groupBoxEdit);
+            this.ClientSize = new System.Drawing.Size(571, 461);
             this.Controls.Add(this.buttonShowAddGroup);
             this.Controls.Add(this.groupBoxAdd);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
-            this.Text = "nu";
+            this.Text = "Student";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBoxAdd.ResumeLayout(false);
             this.groupBoxAdd.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).EndInit();
-            this.groupBoxEdit.ResumeLayout(false);
-            this.groupBoxEdit.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEditAge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -386,25 +311,18 @@
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.GroupBox groupBoxEdit;
-        private System.Windows.Forms.Button buttonEditSave;
-        private System.Windows.Forms.NumericUpDown numericUpDownEditAge;
-        private System.Windows.Forms.TextBox textBoxEditSurname;
-        private System.Windows.Forms.TextBox textBoxEditName;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label labelEditId;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button buttonShowAddGroup;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label labelAddOrEdit;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ageDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn EditStudent;
         private System.Windows.Forms.DataGridViewButtonColumn DeleteStudent;
-        private System.Windows.Forms.Button buttonShowAddGroup;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
     }
 }
 
