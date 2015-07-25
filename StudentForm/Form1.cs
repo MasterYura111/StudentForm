@@ -18,7 +18,7 @@ namespace StudentForm
 {
     public partial class Form1 : Form
     {
-        private Uri baseUri = new Uri("http://localhost:19121/");
+        private Uri baseUri = new Uri("http://masteryura.in.ua/");
 
         public Form1()
         {
@@ -35,7 +35,8 @@ namespace StudentForm
             List<Student> students = null;
             using (var client = new HttpClient())
             {
-                var response = client.GetAsync("http://localhost:19121/api/values").Result;
+                client.BaseAddress = baseUri;
+                var response = client.GetAsync("api/values").Result;
                 if (response.IsSuccessStatusCode)
                 {
                     string responseString = response.Content.ReadAsStringAsync().Result;

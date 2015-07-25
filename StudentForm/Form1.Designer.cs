@@ -147,6 +147,7 @@
             // textBoxSurname
             // 
             this.textBoxSurname.Location = new System.Drawing.Point(22, 119);
+            this.textBoxSurname.MaxLength = 30;
             this.textBoxSurname.Name = "textBoxSurname";
             this.textBoxSurname.Size = new System.Drawing.Size(146, 22);
             this.textBoxSurname.TabIndex = 3;
@@ -163,6 +164,7 @@
             // textBoxName
             // 
             this.textBoxName.Location = new System.Drawing.Point(22, 56);
+            this.textBoxName.MaxLength = 30;
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(146, 22);
             this.textBoxName.TabIndex = 1;
@@ -283,10 +285,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(571, 461);
+            this.ClientSize = new System.Drawing.Size(572, 453);
             this.Controls.Add(this.buttonShowAddGroup);
             this.Controls.Add(this.groupBoxAdd);
             this.Controls.Add(this.dataGridView1);
+            this.MinimumSize = new System.Drawing.Size(590, 500);
             this.Name = "Form1";
             this.Text = "Student";
             this.Load += new System.EventHandler(this.Form1_Load);

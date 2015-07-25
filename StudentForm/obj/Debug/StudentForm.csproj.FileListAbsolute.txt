@@ -14,3 +14,7 @@ c:\users\yura\documents\visual studio 2013\Projects\StudentForm\StudentForm\obj\
 c:\users\yura\documents\visual studio 2013\Projects\StudentForm\StudentForm\obj\Debug\StudentForm.pdb
 c:\users\yura\documents\visual studio 2013\Projects\StudentForm\StudentForm\bin\Debug\Newtonsoft.Json.dll
 c:\users\yura\documents\visual studio 2013\Projects\StudentForm\StudentForm\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Yura\Documents\Visual Studio 2013\Projects\StudentForm\StudentForm\bin\Debug\StudentForm.exe.manifest
+C:\Users\Yura\Documents\Visual Studio 2013\Projects\StudentForm\StudentForm\bin\Debug\StudentForm.application
+C:\Users\Yura\Documents\Visual Studio 2013\Projects\StudentForm\StudentForm\obj\Debug\StudentForm.exe.manifest
+C:\Users\Yura\Documents\Visual Studio 2013\Projects\StudentForm\StudentForm\obj\Debug\StudentForm.application
